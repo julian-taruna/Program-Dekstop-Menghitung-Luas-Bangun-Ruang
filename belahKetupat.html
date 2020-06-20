@@ -1,0 +1,83 @@
+<!-- Code Luas Jajar Genjang -->
+<html>
+    <head>
+        <title> Program Menghitung Belah Ketupat </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.d1BK.value == "" || form.d2BK.value == ""|| form.sisiBK.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasBK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                d=eval(form.d1BK.value); // memasukan value dari name d1BK kedalam variabel a
+                dd=eval(form.d2BK.value); // memasukan value dari name d2BK kedalam variabel t
+                h= 1/2*d*dd   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilBK.value = h; //memberi hasil penjumlahan ke input name hasilBK
+            }
+            function luasBKK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                s=eval(form.sisiBK.value); // memasukan value dari name d1BK kedalam variabel a
+                h= 4*s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilBKK.value = h; //memberi hasil penjumlahan ke input name hasilBK
+            }
+            function reset() {
+                form.d1BK.value="";
+                form.d2BK.value="";
+                form.sisiBK.value="";
+                form.hasilBK.value = "";
+                form.hasilBKK.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                <hr>
+                    <h3>BELAH KETUPAT</h3>
+                <hr>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Belah Ketupat: <br>
+                        Luas =  1/2*d1*d2<br>
+                        keliling = 4*sisi
+                    <hr>
+                        Input D1
+                        <input type=text name="d1BK" size=3><br>
+                        <br>
+                        Input D2
+                        <input type=text name="d2BK" size=3><br>
+                        <br>
+                        Input Sisi
+                        <input type=text name="sisiBK" size=3><br>
+                        <br>
+                        Luas <input type="text" value="" name="hasilBK" size="9">
+                        <br>
+                        Keliling <input type="text" value="" name="hasilBKK" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasBK(); luasBKK()" value="Hitung" style="background-color: blue;">
+                        <input type=button name=submit onclick="reset()" value="Reset" style="background-color: red;">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back" style="background-color: green;">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            <hr>
+                <p style="text-align: center;">Copyright - 2020.By Julian Taruna</p>
+            </div>
+        </body>
+</html>

@@ -1,26 +1,33 @@
-<!-- Code Luas Permukaan Prisma Segitiga -->
+<!-- Code Persegi -->
 <html>
     <head>
-        <title> Program Menghitung Kerucut </title>
+        <title> Program Menghitung Persegi </title>
         <script language="JavaScript">
             function cek(){
-                if(form.luasAlas.value == "" || form.luasSelimut.value == ""){
+                if(form.sisiP.value == ""){
                     alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
                     exit;
                 }
             }
-            function luasK() {
+            function luasP() {
                 cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
-                a=eval(form.luasAlas.value); // memasukan value dari name luasAlas kedalam variabel a
-                s=eval(form.luasSelimut.value); // memasukan value dari name luasSelimut kedalam variabel s
-                h= a+s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                s=eval(form.sisiP.value); // memasukan value dari name sisiP kedalam variabel a
+                h= s*s   // menjumlahkan variabel sesuai rumus Luas Kubus
                 
-                form.hasilK.value = h; //memberi hasil penjumlahan ke input name hasilK
+                form.hasilP.value = h; //memberi hasil penjumlahan ke input name hasilP
+            }
+            function luasPK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                s=eval(form.sisiP.value); // memasukan value dari name sisiP kedalam variabel a
+                h= 4*s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilPK.value = h; //memberi hasil penjumlahan ke input name hasilP
             }
             function reset() {
-                form.luasAlas.value="";
-                form.luasSelimut.value="";
-                form.hasilK.value = "";
+                form.sisiP.value="";
+                form.hasilP.value = "";
+                form.hasilPK.value = "";
+
             }
         </script>
     </head>
@@ -28,30 +35,30 @@
         <!-- header -->
             <div style="margin: 0px 0px 20px 0px; text-align: center;">
                 <hr>
-                    <h3>KERUCUT</h3>
+                    <h3>PERSEGI</h3>
                 <hr>
             </div>
          <!-- body -->
             <div style="
-                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    background-color: #eaeaea; margin-top: 40px;  margin-bottom: 100px;
                     margin-left: 70px;  margin-right: 70px;  padding: 20px;"
             >
                 <form name="form">
                     <hr>
-                        Rumus Kerucut:<br> 
-                        Luas = luas Alas + luas Selimut
+                        Rumus Persegi:<br>
+                        Luas =  s * s<br>
+                        Keliling =  4 * s
                     <hr>
-                        Input Luas Alas
-                        <input type=text name="luasAlas" size=3><br>
+                        Input Sisi
+                        <input type=text name="sisiP" size=3><br>
                         <br>
-                        Input Luas Selimut
-                        <input type=text name="luasSelimut" size=3><br>
+                        Luas Persegi <input type="text" value="" name="hasilP" size="9">
                         <br>
-                        Luas <input type="text" value="" name="hasilK" size="9">
+                        Keliing Persegi <input type="text" value="" name="hasilPK" size="9">
                         <br><br>
                     <hr>
                         <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
-                        <input type=button name=submit onclick="luasK()" value="Hitung" style="background-color: blue;">
+                        <input type=button name=submit onclick="luasP(); luasPK()" value="Hitung" style="background-color: blue;">
                         <input type=button name=submit onclick="reset()" value="Reset" style="background-color: red;">
                         <a href="home.html">
                             <input type=button name=submit  value="Back" style="background-color: green;">

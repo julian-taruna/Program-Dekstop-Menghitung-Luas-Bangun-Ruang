@@ -1,0 +1,83 @@
+<!-- Code Luas Jajar Genjang -->
+<html>
+    <head>
+        <title> Program Menghitung Segitiga </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.alasS.value == "" || form.tinggiS.value == "" || form.sisiS.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasS() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                a=eval(form.alasS.value); // memasukan value dari name alasS kedalam variabel a
+                t=eval(form.tinggiS.value); // memasukan value dari name tinggiS kedalam variabel t
+                h= 1/2*a*t   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilS.value = h; //memberi hasil penjumlahan ke input name hasilS
+            }
+            function luasSK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                s=eval(form.sisiS.value); // memasukan value dari name alasS kedalam variabel a
+                h= s+s+s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilSK.value = h; //memberi hasil penjumlahan ke input name hasilS
+            }
+            function reset() {
+                form.sisiS.value="";
+                form.alasS.value="";
+                form.tinggiS.value="";
+                form.hasilS.value = "";
+                form.hasilSK.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                <hr>
+                    <h3>SEGITIGA</h3>
+                <hr>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Segitiga: <br>
+                        Luas =  1/2 a * t<br>
+                        keliling = s a + s b + s c
+                    <hr>
+                        Input Sisi
+                        <input type=text name="sisiS" size=3><br>
+                        <br>
+                        Input Alas
+                        <input type=text name="alasS" size=3><br>
+                        <br>
+                        Input Tinggi
+                        <input type=text name="tinggiS" size=3><br>
+                        <br>
+                        Luas <input type="text" value="" name="hasilS" size="9">
+                        <br>
+                        Keliling <input type="text" value="" name="hasilSK" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasS(); luasSK()" value="Hitung" style="background-color: blue;">
+                        <input type=button name=submit onclick="reset()" value="Reset" style="background-color: red;">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back" style="background-color: green;">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            <hr>
+                <p style="text-align: center;">Copyright - 2020.By Julian Taruna</p>
+            </div>
+        </body>
+</html>

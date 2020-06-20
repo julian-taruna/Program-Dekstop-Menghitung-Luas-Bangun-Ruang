@@ -1,0 +1,80 @@
+<!-- Code Luas Jajar Genjang -->
+<html>
+    <head>
+        <title> Program Menghitung Persegi Panjang </title>
+        <script language="JavaScript">
+            function cek(){
+                if(form.panjangPJ.value == "" || form.lebarPJ.value == ""){
+                    alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
+                    exit;
+                }
+            }
+            function luasPJ() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                p=eval(form.panjangPJ.value); // memasukan value dari name panjangPJ kedalam variabel a
+                l=eval(form.lebarPJ.value); // memasukan value dari name lebarPJ kedalam variabel t
+                h= p*l   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilPJ.value = h; //memberi hasil penjumlahan ke input name hasilPJ
+            }
+            function luasPJK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                p=eval(form.panjangPJ.value); // memasukan value dari name panjangPJ kedalam variabel a
+                l=eval(form.lebarPJ.value); // memasukan value dari name lebarPJ kedalam variabel t
+                h= 2*(p+l)   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilPJK.value = h; //memberi hasil penjumlahan ke input name hasilPJ
+            }
+            function reset() {
+                form.panjangPJ.value="";
+                form.lebarPJ.value="";
+                form.hasilPJ.value = "";
+                form.hasilPJK.value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <!-- header -->
+            <div style="margin: 0px 0px 20px 0px; text-align: center;">
+                <hr>
+                    <h3>PERSEGI PANJANG</h3>
+                <hr>
+            </div>
+         <!-- body -->
+            <div style="
+                    background-color: #eaeaea; margin-top: 50px;  margin-bottom: 110px;
+                    margin-left: 70px;  margin-right: 70px;  padding: 20px;"
+            >
+                <form name="form">
+                    <hr>
+                        Rumus Persegi Panjang: <br>
+                        Luas =  p * l<br>
+                        keliling = 2 * (p + l)
+                    <hr>
+                        Input Panjang
+                        <input type=text name="panjangPJ" size=3><br>
+                        <br>
+                        Input Lebar
+                        <input type=text name="lebarPJ" size=3><br>
+                        <br>
+                        Luas <input type="text" value="" name="hasilPJ" size="9">
+                        <br>
+                        Keliling <input type="text" value="" name="hasilPJK" size="9">
+                        <br><br>
+                    <hr>
+                        <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
+                        <input type=button name=submit onclick="luasPJ(); luasPJK()" value="Hitung" style="background-color: blue;">
+                        <input type=button name=submit onclick="reset()" value="Reset" style="background-color: red;">
+                        <a href="home.html">
+                            <input type=button name=submit  value="Back" style="background-color: green;">
+                        </a>
+                    <hr>
+                </form>
+            </div>
+        <!-- footer -->
+            <div>
+            <hr>
+                <p style="text-align: center;">Copyright - 2020.By Julian Taruna</p>
+            </div>
+        </body>
+</html>

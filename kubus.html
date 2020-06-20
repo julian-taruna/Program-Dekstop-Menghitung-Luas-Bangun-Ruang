@@ -1,24 +1,33 @@
 <!-- Code Luas Kubus -->
 <html>
     <head>
-        <title> Program Menghitung Luas Kubus </title>
+        <title> Program Menghitung Kubus </title>
         <script language="JavaScript">
             function cek(){
-                if(form.sisiKb.value == ""){
+                if(form.sisiK.value == ""){
                     alert("Silahkan Input Nilai"); // menamppilkan popup ketika belum input nilai
                     exit;
                 }
             }
-            function luasKb() {
+            function luasK() {
                 cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
-                s=eval(form.sisiKb.value); // memasukan value dari name sisiKb kedalam variabel s
+                s=eval(form.sisiK.value); // memasukan value dari name sisiK kedalam variabel s
                 h= 6*s*s   // menjumlahkan variabel sesuai rumus Luas Kubus
                 
-                form.hasilKb.value = h; //memberi hasil penjumlahan ke input name hasilKb
+                form.hasilK.value = h; //memberi hasil penjumlahan ke input name hasilKb
             }
+            function luasKK() {
+                cek(); // sebelum memanggil rumus, maka akan dicek dulu apa sudah ada nilai / belum?
+                s=eval(form.sisiK.value); // memasukan value dari name sisiK kedalam variabel s
+                h= 12*s*s   // menjumlahkan variabel sesuai rumus Luas Kubus
+                
+                form.hasilKK.value = h; //memberi hasil penjumlahan ke input name hasilKb
+            }
+
             function reset() {
-                form.sisiKb.value="";
-                form.hasilKb.value = "";
+                form.sisiK.value="";
+                form.hasilK.value = "";
+                form.hasilKK.value = "";
             }
         </script>
     </head>
@@ -26,7 +35,7 @@
     <!-- header -->
         <div style="margin: 0px 0px 20px 0px; text-align: center;">
             <hr>
-                <h3>LUAS KUBUS</h3>
+                <h3>KUBUS</h3>
             <hr>
         </div>
      <!-- body -->
@@ -36,16 +45,20 @@
         >
             <form name="form">
                 <hr>
-                    Rumus Luas Kubus =  6 * sisi * sisi
+                    Rumus Kubus:<br>
+                    Luas =  6 * s * s <br>
+                    Keliling = 12 * s
                 <hr>
                     Input Sisi
-                    <input type=text name="sisiKb" size=3><br>
+                    <input type=text name="sisiK" size=3><br>
                     <br>
-                    Hasil <input type="text" value="" name="hasilKb" size="9">
+                    Luas <input type="text" value="" name="hasilK" size="9">
+                    <br>
+                    Keliling <input type="text" value="" name="hasilKK" size="9">
                     <br><br>
                 <hr>
                     <!-- membuat kondisi ketika tombol di klik, yang nantinya memanggil function dari javascript -->
-                    <input type=button name=submit onclick="luasKb()" value="Hitung" style="background-color: blue;">
+                    <input type=button name=submit onclick="luasK(); luasKK()" value="Hitung" style="background-color: blue;">
                     <input type=button name=submit onclick="reset()" value="Reset" style="background-color: red;">
                 <hr>
             </form>

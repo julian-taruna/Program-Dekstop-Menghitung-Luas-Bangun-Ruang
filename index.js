@@ -27,8 +27,9 @@ app.on("ready", ()=> {
 
 });
 
-// Link Luas Jajar Genjang 
-const createWindowCreatorJargenLu = () => {
+// Bangun Ruang
+// Link Jajar Genjang 
+const createWindowCreatorjajarGenjang = () => {
     rumusWindow = new BrowserWindow({
         webPreferences: {
             nodeIntegration: true
@@ -39,23 +40,7 @@ const createWindowCreatorJargenLu = () => {
     });
 
     rumusWindow.setMenu(null);
-    rumusWindow.loadURL(`file://${__dirname}/luasJG.html`);
-    rumusWindow.on("closed", () => (rumusWindow = null))
-};
-
-// Link Keliling Jajar Genjang 
-const createWindowCreatorJargenKel = () => {
-    rumusWindow = new BrowserWindow({
-        webPreferences: {
-            nodeIntegration: true
-        },
-        width: 800,
-        height: 600,
-        title: "All Appoinments"
-    });
-
-    rumusWindow.setMenu(null);
-    rumusWindow.loadURL(`file://${__dirname}/kelilingJG.html`);
+    rumusWindow.loadURL(`file://${__dirname}/jajarGenjang.html`);
     rumusWindow.on("closed", () => (rumusWindow = null))
 };
 
@@ -123,6 +108,90 @@ const rumusWindowCreatorKerucut = () => {
     rumusWindow.on("closed", () => (rumusWindow = null))
 };
 
+// <=====================================================>
+
+// Bangun Datar
+// Link Persegi
+const rumusWindowCreatorPersegi = () => {
+    rumusWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800,
+        height: 600,
+        title: "All Appoinments"
+    });
+
+    rumusWindow.setMenu(null);
+    rumusWindow.loadURL(`file://${__dirname}/persegi.html`);
+    rumusWindow.on("closed", () => (rumusWindow = null))
+};
+
+// Link Persegi Panjang
+const rumusWindowCreatorPersegiPanjang = () => {
+    rumusWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800,
+        height: 600,
+        title: "All Appoinments"
+    });
+
+    rumusWindow.setMenu(null);
+    rumusWindow.loadURL(`file://${__dirname}/persegiPanjang.html`);
+    rumusWindow.on("closed", () => (rumusWindow = null))
+};
+
+// Link Segitiga
+const rumusWindowCreatorSegitiga = () => {
+    rumusWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800,
+        height: 600,
+        title: "All Appoinments"
+    });
+
+    rumusWindow.setMenu(null);
+    rumusWindow.loadURL(`file://${__dirname}/segitiga.html`);
+    rumusWindow.on("closed", () => (rumusWindow = null))
+};
+
+// Link Belah Ketupat
+const rumusWindowCreatorbelahKetupat = () => {
+    rumusWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800,
+        height: 600,
+        title: "All Appoinments"
+    });
+
+    rumusWindow.setMenu(null);
+    rumusWindow.loadURL(`file://${__dirname}/belahKetupat.html`);
+    rumusWindow.on("closed", () => (rumusWindow = null))
+};
+
+// Link Lingkaran
+const rumusWindowCreatorlingkaran = () => {
+    rumusWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 800,
+        height: 600,
+        title: "All Appoinments"
+    });
+
+    rumusWindow.setMenu(null);
+    rumusWindow.loadURL(`file://${__dirname}/lingkaran.html`);
+    rumusWindow.on("closed", () => (rumusWindow = null))
+};
+
+
 // Code Menu Template
 const menuTemplate = [
     
@@ -143,46 +212,79 @@ const menuTemplate = [
         ]
     },
 
-    // Menu Formula
+    // Menu Formula A
     {
-        label: "Formula",
+        label: "Rumus Bangun Ruang",
         submenu: [
             {
-                label: "1. Luar Jajar Genjang",
+                label: "1. Jajar Genjang",
                 
                 click() {
-                    createWindowCreatorJargenLu();
+                    createWindowCreatorjajarGenjang();
                 }
             },
             {
-                label: "2. Keliling Jajar Genjang",
-                
-                click() {
-                    createWindowCreatorJargenKel();
-                }
-            },
-            {
-                label: "3. Luas Kubus",
+                label: "2. Kubus",
                 click() {
                     rumusWindowCreatorKubus();
                 }
             },
             {
-                label: "4. Luas Prisma Segitiga",
+                label: "3. Prisma Segitiga",
                 click() {
                     rumusWindowCreatorPriseg();
                 }
             },
             {
-                label: "5. Luas Tabung",
+                label: "4. Tabung",
                 click() {
                     rumusWindowCreatorTabung();
                 }
             },
             {
-                label: "6. Kerucut",
+                label: "5. Kerucut",
                 click() {
                     rumusWindowCreatorKerucut();
+                }
+            }
+        
+        ]
+    },
+
+    // Menu Formula B
+    {
+        label: "Rumus Bangun Datar",
+        submenu: [
+            {
+                label: "1. Persegi",
+                
+                click() {
+                    rumusWindowCreatorPersegi();
+                }
+            },
+            {
+                label: "2. Persegi Panjang",
+                
+                click() {
+                    rumusWindowCreatorPersegiPanjang();
+                }
+            },
+            {
+                label: "3. Segitiga",
+                click() {
+                    rumusWindowCreatorSegitiga();
+                }
+            },
+            {
+                label: "4. Belah Ketupat",
+                click() {
+                    rumusWindowCreatorbelahKetupat();
+                }
+            },
+            {
+                label: "5. Lingkaran",
+                click() {
+                    rumusWindowCreatorlingkaran();
                 }
             }
         
